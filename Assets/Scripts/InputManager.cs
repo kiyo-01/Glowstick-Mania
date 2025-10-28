@@ -13,4 +13,14 @@ public class InputManager : MonoBehaviour
     {
         //if (Input.GetKeyDown)
     }
+
+    //getting input from player
+    //currently uses arrow keys for testing, but will be set up for motion detection in the future
+    void getInput()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+
+        }
+    }
 }
