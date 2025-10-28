@@ -8,6 +8,7 @@ public class Conductor : MonoBehaviour
     public ChartHolder chartHolder;
     public AudioSource music; //the music
     public AudioSource metronome;
+    public NoteDisplay noteDisplay;
 
     [Header("Conductor")]
     public float bpm; //bpm of song
@@ -53,6 +54,7 @@ public class Conductor : MonoBehaviour
         if (chart[0][0] == currentMeasure && chart[0][1] == currentBeat)
         {
             print(chart[0][0] + ", " + chart[0][1] + ", " + chart[0][2]);
+            noteDisplay.setNote(chart[0][2]);
             chart.Remove(chart[0]);
         }
 
