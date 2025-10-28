@@ -32,6 +32,7 @@ public class ChartHolder : MonoBehaviour
         }
     }
     
+    //getting the test chart
     List<List<float>> GetTestChart()
     {
         List<List<float>> chart = new List<List<float>>
@@ -40,10 +41,14 @@ public class ChartHolder : MonoBehaviour
             new List<float> {1, 2, GetMoveId("down")},
             new List<float> {1, 3, GetMoveId("left")},
             new List<float> {1, 4, GetMoveId("right")},
-            new List<float> {2, 1, GetMoveId("up")},
-            new List<float> {2, 2, GetMoveId("down")},
-            new List<float> {2, 3, GetMoveId("left")},
-            new List<float> {2, 4, GetMoveId("right")},
+            new List<float> {2, 1, GetMoveId("down")},
+            new List<float> {2, 2, GetMoveId("up")},
+            new List<float> {2, 3, GetMoveId("right")},
+            new List<float> {2, 4, GetMoveId("left")},
+            new List<float> {3, 1, GetMoveId("right")},
+            new List<float> {3, 2, GetMoveId("up")},
+            new List<float> {3, 3, GetMoveId("down")},
+            new List<float> {3, 4, GetMoveId("left")},
         };
 
         return chart;

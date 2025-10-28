@@ -7,6 +7,7 @@ public class Conductor : MonoBehaviour
     [Header("References")]
     public ChartHolder chartHolder;
     public AudioSource music; //the music
+    public AudioSource metronome;
 
     [Header("Conductor")]
     public float bpm; //bpm of song
@@ -19,9 +20,6 @@ public class Conductor : MonoBehaviour
     [SerializeField] int currentMeasure; //current measure of the song
     [SerializeField] float currentBeat; //current beat of the song
     [SerializeField] float dspSongTime; //how many seconds passed since the song started
-
-    
-    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,14 +41,21 @@ public class Conductor : MonoBehaviour
         //get the total amount of beats in the song
         totalBeats = Mathf.FloorToInt(songPosition / secPerBeat);
 
+        //metronome that plays every beat
+        if ((totalBeats % 4) + 1 != currentBeat)
+            metronome.Play();
+
         //get the current measure and beat of the song
         currentMeasure = (int)totalBeats / 4 + 1;
         currentBeat = (totalBeats % 4) + 1;
 
+        //check if the note should be displayed
         if (chart[0][0] == currentMeasure && chart[0][1] == currentBeat)
         {
             print(chart[0][0] + ", " + chart[0][1] + ", " + chart[0][2]);
             chart.Remove(chart[0]);
         }
+
+
     }
 }
