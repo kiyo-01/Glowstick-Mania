@@ -8,7 +8,7 @@ public class Conductor : MonoBehaviour
     public ChartHolder chartHolder;
     public AudioSource music; //the music
     public AudioSource metronome;
-    public NoteDisplay noteDisplay;
+    public NoteDisplay[] noteDisplays;
 
     [Header("Conductor")]
     public float bpm; //bpm of song
@@ -29,7 +29,7 @@ public class Conductor : MonoBehaviour
         secPerBeat = 60f / bpm; //get the amount of seconds per beat based on bpm
         dspSongTime = (float)AudioSettings.dspTime; //get the amount of time since song started
 
-        chart = chartHolder.getChart("test"); //get the test chart
+        chart = chartHolder.getChart("test2"); //get the test chart
         music.Play(); //play the music
     }
 
@@ -51,13 +51,11 @@ public class Conductor : MonoBehaviour
         currentBeat = (totalBeats % 4) + 1;
 
         //check if the note should be displayed
-        if (chart[0][0] == currentMeasure && chart[0][1] == currentBeat)
+        while (chart[0][0] == currentMeasure && chart[0][1] == currentBeat)
         {
             print(chart[0][0] + ", " + chart[0][1] + ", " + chart[0][2]);
-            noteDisplay.setNote(chart[0][2]);
+            noteDisplays[(int)chart[0][3] - 1].setNote(chart[0][2]);
             chart.Remove(chart[0]);
         }
-
-
     }
 }
