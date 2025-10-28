@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputManager : MonoBehaviour
 {
+    //public UnityEvent 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
