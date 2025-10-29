@@ -86,23 +86,24 @@ public class ChartHolder : MonoBehaviour
 
             new List<float> {1, 2, GetMoveId("up"), 2},
 
-            new List<float> {1, 3, GetMoveId("up"), 3},
             new List<float> {1, 3, GetMoveId("left"), 1},
+            new List<float> {1, 3, GetMoveId("up"), 3},
 
-            new List<float> {1, 4, GetMoveId("up"), 4},
             new List<float> {1, 4, GetMoveId("left"), 2},
+            new List<float> {1, 4, GetMoveId("up"), 4},
 
-            new List<float> {2, 1, GetMoveId("left"), 3},
+            
             new List<float> {2, 1, GetMoveId("down"), 1},
+            new List<float> {2, 1, GetMoveId("left"), 3},
 
-            new List<float> {2, 2, GetMoveId("left"), 4},
             new List<float> {2, 2, GetMoveId("down"), 2},
+            new List<float> {2, 2, GetMoveId("left"), 4},
 
-            new List<float> {2, 3, GetMoveId("down"), 3},
             new List<float> {2, 3, GetMoveId("right"), 1},
+            new List<float> {2, 3, GetMoveId("down"), 3},
 
-            new List<float> {2, 4, GetMoveId("down"), 4},
             new List<float> {2, 4, GetMoveId("right"), 2},
+            new List<float> {2, 4, GetMoveId("down"), 4},
 
             new List<float> {3, 1, GetMoveId("right"), 3},
 
@@ -114,7 +115,7 @@ public class ChartHolder : MonoBehaviour
     }
 
     //converts the move type from a string to a float so it can be read by conductor
-    float GetMoveId(string moveType)
+    public float GetMoveId(string moveType)
     {
         switch (moveType)
         {
@@ -132,6 +133,28 @@ public class ChartHolder : MonoBehaviour
             
             default:
                 return -1;
+        }
+    }
+
+    //converts the move id from a float to a string 
+    public string GetMoveName(float moveId)
+    {
+        switch (moveId)
+        {
+            case 1:
+                return "up";
+
+            case 2:
+                return "down";
+
+            case 3:
+                return "left";
+
+            case 4:
+                return "right";
+
+            default:
+                return null;
         }
     }
 }

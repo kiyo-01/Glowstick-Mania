@@ -9,6 +9,7 @@ public class Conductor : MonoBehaviour
     public AudioSource music; //the music
     public AudioSource metronome;
     public NoteDisplay[] noteDisplays;
+    EventCore eventCore;
 
     [Header("Conductor")]
     public float bpm; //bpm of song
@@ -21,16 +22,26 @@ public class Conductor : MonoBehaviour
     [SerializeField] int currentMeasure; //current measure of the song
     [SerializeField] float currentBeat; //current beat of the song
     [SerializeField] float dspSongTime; //how many seconds passed since the song started
+    [SerializeField] float noteInMilliseconds; //convert the current note's position in time to milliseconds
+    [SerializeField] float ms; //how many milliseconds away from finishing
+    [SerializeField] float playerRow; //the row the player is in
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        eventCore.provideInput.AddListener(ProcessInput);
+
         music = GetComponent<AudioSource>();
         secPerBeat = 60f / bpm; //get the amount of seconds per beat based on bpm
         dspSongTime = (float)AudioSettings.dspTime; //get the amount of time since song started
 
         chart = chartHolder.getChart("test2"); //get the test chart
         music.Play(); //play the music
+
+        playerRow = 4; //start at the very back
+
+        noteInMilliseconds = secPerBeat; //start from the first note
     }
 
     // Update is called once per frame
@@ -38,6 +49,7 @@ public class Conductor : MonoBehaviour
     {
         //determine the song position by checking how many seconds have passed since the song started
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
+        //print("song position: " + songPosition);
 
         //get the total amount of beats in the song
         totalBeats = Mathf.FloorToInt(songPosition / secPerBeat);
@@ -49,13 +61,66 @@ public class Conductor : MonoBehaviour
         //get the current measure and beat of the song
         currentMeasure = (int)totalBeats / 4 + 1;
         currentBeat = (totalBeats % 4) + 1;
+        
+        ms = (noteInMilliseconds - songPosition) * 1000;
+        //print("ms: " + (ms));
 
+        //if the current note has been up for 200 ms, update for the next note
+        if (ms < -200)
+        {
+            noteInMilliseconds = ((currentMeasure - 1) * 4 + currentBeat) * secPerBeat;
+        }
+        
         //check if the note should be displayed
         while (chart[0][0] == currentMeasure && chart[0][1] == currentBeat)
         {
             print(chart[0][0] + ", " + chart[0][1] + ", " + chart[0][2]);
-            noteDisplays[(int)chart[0][3] - 1].setNote(chart[0][2]);
+
+            if (chart[0][3] != playerRow)    
+                noteDisplays[(int)chart[0][3] - 1].setNote(chart[0][2]);
+
             chart.Remove(chart[0]);
+        }
+    }
+
+    //check player's input and see if it is on beat and correctly pressed
+    void ProcessInput(string input)
+    {
+        //change player's arrow to the movement they did
+        noteDisplays[(int)playerRow - 1].setNote(chartHolder.GetMoveId(input));
+
+        //if player did the wrong movement
+        if (input != chartHolder.GetMoveName(chart[0][2]))
+        {
+            print("wrong movement dummy\nms:" + (ms));
+            print("should be " + chartHolder.GetMoveName(chart[0][2]) + ", but you pressed " + input);
+            return;
+        }
+        //print("note in milliseconds: " + noteInMilliseconds);
+        print("ms: " + (ms));
+
+        //okay judgement
+        if (ms > 184 || ms < -184)
+        {
+            print("judgement: okay \nms:" + (ms));
+            noteDisplays[(int)playerRow - 1].image.color = Color.orange;
+            return;
+        }
+
+        //good judgement
+        if (ms > 66 || ms < -66)
+        {
+            print("judgement: good \nms:" + (ms));
+            noteDisplays[(int)playerRow - 1].image.color = Color.green;
+            return;
+        }
+
+        //perfect judgement
+        if (ms > 32 || ms < -32)
+        {
+            print("judgement: perfect \nms:" + (ms));
+            noteDisplays[(int)playerRow - 1].image.color = Color.yellow;
+            return;
         }
     }
 }
