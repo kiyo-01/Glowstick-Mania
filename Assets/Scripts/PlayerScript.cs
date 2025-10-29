@@ -7,31 +7,34 @@ public class PlayerScript : MonoBehaviour
     public float points = 0;
     public Transform cameraTransform;
     float newCameraTransform = 0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         newCameraTransform = cameraTransform.position.z;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        
         points = Mathf.Clamp(points, -6, 5);
 
-        Vector3 cameraOriginal = cameraTransform.position;
 
+        // camera movement
+        Vector3 cameraOriginal = cameraTransform.position;
 
         cameraOriginal.z = Mathf.Lerp(cameraOriginal.z, newCameraTransform, 2.0f * Time.deltaTime);
 
         cameraTransform.position = cameraOriginal;
         
 
+        // lose condition
         if (points < -5)
         {
             SceneManager.LoadScene(3);
         }
     }
 
+    // point update for camera movement
     void PointChange(float pointChange)
     {
         points += pointChange;
@@ -40,7 +43,7 @@ public class PlayerScript : MonoBehaviour
             newCameraTransform = -10f + points;
         }
         
-        Debug.Log(newCameraTransform);
+        //Debug.Log(newCameraTransform);
     }
 
     public void DebugButtonPoints(float pointChange)
