@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     public float points = 0;
     public Transform cameraTransform;
     float newCameraTransform = 0f;
+    public Slider pointsBar;
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class PlayerScript : MonoBehaviour
     {
         
         points = Mathf.Clamp(points, -6, 5);
+        pointsBar.value = points;
 
 
         // camera movement
@@ -28,7 +31,7 @@ public class PlayerScript : MonoBehaviour
         
 
         // lose condition
-        if (points < -5)
+        if (points <= -5)
         {
             SceneManager.LoadScene(3);
         }
