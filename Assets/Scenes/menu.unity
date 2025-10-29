@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 799042001}
   - component: {fileID: 799042000}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Crowd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,7 +1348,7 @@ GameObject:
   - component: {fileID: 1131917229}
   - component: {fileID: 1131917228}
   m_Layer: 0
-  m_Name: Quad (1)
+  m_Name: Crowd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
