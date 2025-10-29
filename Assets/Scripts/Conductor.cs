@@ -27,6 +27,7 @@ public class Conductor : MonoBehaviour
     [SerializeField] float noteInMilliseconds; //convert the current note's position in time to milliseconds
     [SerializeField] float ms; //how many milliseconds away from finishing
     [SerializeField] float playerRow; //the row the player is in
+    bool alreadyMoved;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +45,7 @@ public class Conductor : MonoBehaviour
         playerRow = 4; //start at the very back
 
         noteInMilliseconds = secPerBeat; //start from the first note
+        alreadyMoved = true;
     }
 
     // Update is called once per frame
@@ -72,6 +74,7 @@ public class Conductor : MonoBehaviour
         {
             noteInMilliseconds = ((currentMeasure - 1) * 4 + currentBeat) * secPerBeat;
             noteDisplays[(int)playerRow - 1].image.color = Color.white;
+            alreadyMoved = false;
         }
         
         //check if the note should be displayed
@@ -89,10 +92,17 @@ public class Conductor : MonoBehaviour
     //check player's input and see if it is on beat and correctly pressed
     void ProcessInput(string input)
     {
+        if (alreadyMoved)
+        {
+            return;
+        }
+        
         //change player's arrow to the movement they did
         noteDisplays[(int)playerRow - 1].setNote(chartHolder.GetMoveId(input));
 
         float specificNote = GetSpecificNote();
+
+        alreadyMoved = true;
 
         //if player did the wrong movement
         if (input != chartHolder.GetMoveName(specificNote))
