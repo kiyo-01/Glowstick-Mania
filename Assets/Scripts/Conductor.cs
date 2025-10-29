@@ -63,12 +63,13 @@ public class Conductor : MonoBehaviour
         currentBeat = (totalBeats % 4) + 1;
         
         ms = (noteInMilliseconds - songPosition) * 1000;
-        //print("ms: " + (ms));
+        print("ms: " + (ms));
 
         //if the current note has been up for 200 ms, update for the next note
-        if (ms < -200)
+        if (ms < -700)
         {
             noteInMilliseconds = ((currentMeasure - 1) * 4 + currentBeat) * secPerBeat;
+            noteDisplays[(int)playerRow - 1].image.color = Color.white;
         }
         
         //check if the note should be displayed
@@ -89,8 +90,10 @@ public class Conductor : MonoBehaviour
         //change player's arrow to the movement they did
         noteDisplays[(int)playerRow - 1].setNote(chartHolder.GetMoveId(input));
 
+        float specificNote = GetSpecificNote();
+
         //if player did the wrong movement
-        if (input != chartHolder.GetMoveName(chart[0][2]))
+        if (input != chartHolder.GetMoveName(specificNote))
         {
             print("wrong movement dummy\nms:" + (ms));
             print("should be " + chartHolder.GetMoveName(chart[0][2]) + ", but you pressed " + input);
@@ -119,8 +122,41 @@ public class Conductor : MonoBehaviour
         if (ms > 32 || ms < -32)
         {
             print("judgement: perfect \nms:" + (ms));
-            noteDisplays[(int)playerRow - 1].image.color = Color.yellow;
+            noteDisplays[(int)playerRow - 1].image.color = Color.blue;
             return;
         }
+    }
+
+    //get the note that should be pressed
+    float GetSpecificNote()
+    {
+        //if there is only one note
+        if (chart.Count < 2)
+        {
+            return chart[0][2];
+        }
+        
+        //if there are not two notes being shown in the same measure or beat
+        if (chart[0][0] != chart[1][0] || chart[0][1] != chart[1][1])
+        {
+            return chart[0][2];
+        }
+
+        //check how far the player's row is from these notes
+        float firstNoteDifference = playerRow - chart[0][3];
+        float secondNoteDifference = playerRow - chart[1][3];
+
+        //if this note has already passed the player or the note is closer to the player than the other one
+        if (firstNoteDifference < 0 || secondNoteDifference < firstNoteDifference)
+        {
+            return chart[1][2];
+        }
+
+        if (secondNoteDifference < 0 || firstNoteDifference < secondNoteDifference)
+        {
+            return chart[0][2];
+        }
+
+        return -1;
     }
 }
