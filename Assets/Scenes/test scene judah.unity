@@ -970,7 +970,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941542907}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -1080,13 +1080,15 @@ MonoBehaviour:
   - {fileID: 2038114486}
   - {fileID: 1614067518}
   - {fileID: 1494816628}
-  bpm: 60
+  bpm: 70
   secPerBeat: 0
   songPosition: 0
   totalBeats: 0
   currentMeasure: 0
   currentBeat: 0
   dspSongTime: 0
+  noteInMilliseconds: 0
+  ms: 0
   playerRow: 0
 --- !u!4 &941542910
 Transform:

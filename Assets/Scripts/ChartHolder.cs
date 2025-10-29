@@ -109,6 +109,72 @@ public class ChartHolder : MonoBehaviour
 
             new List<float> {3, 2, GetMoveId("right"), 4},
 
+            new List<float> {3, 3, GetMoveId("right"), 1},
+
+            new List<float> {3, 4, GetMoveId("right"), 1},
+
+            new List<float> {4, 1, GetMoveId("up"), 1},
+
+            new List<float> {4, 2, GetMoveId("up"), 2},
+
+            new List<float> {4, 3, GetMoveId("up"), 3},
+
+            new List<float> {4, 4, GetMoveId("up"), 4},
+
+            new List<float> {5, 1, GetMoveId("down"), 1},
+
+            new List<float> {5, 2, GetMoveId("down"), 2},
+
+            new List<float> {5, 3, GetMoveId("down"), 3},
+
+            new List<float> {5, 4, GetMoveId("down"), 4},
+
+            new List<float> {6, 1, GetMoveId("left"), 1},
+
+            new List<float> {6, 2, GetMoveId("left"), 2},
+
+            new List<float> {6, 3, GetMoveId("left"), 3},
+
+            new List<float> {6, 4, GetMoveId("left"), 4},
+
+            new List<float> {7, 1, GetMoveId("right"), 1},
+
+            new List<float> {7, 2, GetMoveId("right"), 2},
+
+            new List<float> {7, 3, GetMoveId("right"), 3},
+
+            new List<float> {7, 4, GetMoveId("right"), 4},
+
+            new List<float> {8, 1, GetMoveId("up"), 1},
+
+            new List<float> {8, 2, GetMoveId("up"), 2},
+
+            new List<float> {8, 3, GetMoveId("left"), 1},
+            new List<float> {8, 3, GetMoveId("up"), 3},
+
+            new List<float> {8, 4, GetMoveId("left"), 2},
+            new List<float> {8, 4, GetMoveId("up"), 4},
+
+            new List<float> {9, 1, GetMoveId("down"), 1},
+            new List<float> {9, 1, GetMoveId("left"), 3},
+
+            new List<float> {9, 2, GetMoveId("down"), 2},
+            new List<float> {9, 2, GetMoveId("left"), 4},
+
+            new List<float> {9, 3, GetMoveId("right"), 1},
+            new List<float> {9, 3, GetMoveId("down"), 3},
+
+            new List<float> {9, 4, GetMoveId("right"), 2},
+            new List<float> {9, 4, GetMoveId("down"), 4},
+
+            new List<float> {10, 1, GetMoveId("right"), 3},
+
+            new List<float> {10, 2, GetMoveId("right"), 4},
+
+            new List<float> {10, 3, GetMoveId("right"), 1},
+
+            new List<float> {10, 4, GetMoveId("right"), 1},
+
         };
 
         return chart;
