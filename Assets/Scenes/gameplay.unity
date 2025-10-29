@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 21539663}
   - component: {fileID: 21539662}
   m_Layer: 0
-  m_Name: Crowd (2)
+  m_Name: Crowd2Row3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 21539661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.98242, y: -2.7236898, z: -1.17}
+  m_LocalPosition: {x: 0.98242, y: -2.66, z: -2.23}
   m_LocalScale: {x: 7.9379997, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -729,7 +729,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -834,14 +834,14 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.12953885, g: 0.09371662, b: 0.24528301, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -897,13 +897,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246555186}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.5342661, y: -0.109088965, z: -0.023515679, w: 0.83791786}
   m_LocalPosition: {x: 8.95695, y: 1.3344, z: 1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 117.100006, y: 152.841, z: 159.978}
 --- !u!1 &247342966
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +983,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1110,7 +1110,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1300,10 +1300,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1790900233}
-  - {fileID: 911927365}
   - {fileID: 1980708919}
   - {fileID: 1669816740}
   - {fileID: 1454500906}
+  - {fileID: 911927365}
   - {fileID: 21539665}
   - {fileID: 1413300448}
   - {fileID: 2143985218}
@@ -1459,7 +1459,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1719,7 +1719,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1907,7 +1907,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2128,7 +2128,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2255,7 +2255,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2718,7 +2718,7 @@ GameObject:
   - component: {fileID: 911927363}
   - component: {fileID: 911927362}
   m_Layer: 0
-  m_Name: Coordinator
+  m_Name: CoordinatorRow1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2811,7 +2811,7 @@ Transform:
   m_GameObject: {fileID: 911927361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.58, y: -0.84, z: 0}
+  m_LocalPosition: {x: -1.47, y: -0.304, z: 1.647}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3809,7 +3809,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -4109,7 +4109,7 @@ GameObject:
   - component: {fileID: 1413300450}
   - component: {fileID: 1413300449}
   m_Layer: 0
-  m_Name: Crowd (5)
+  m_Name: Crowd1Row3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4124,7 +4124,7 @@ Transform:
   m_GameObject: {fileID: 1413300447}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.005, y: -2.7236898, z: -1.17}
+  m_LocalPosition: {x: -6.005, y: -2.66, z: -2.23}
   m_LocalScale: {x: 7.9379997, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4333,7 +4333,7 @@ GameObject:
   - component: {fileID: 1454500904}
   - component: {fileID: 1454500903}
   m_Layer: 0
-  m_Name: Crowd (1)
+  m_Name: Crowd3Row2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4426,7 +4426,7 @@ Transform:
   m_GameObject: {fileID: 1454500902}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.24242, y: -2.14, z: 1.4300001}
+  m_LocalPosition: {x: 5.24242, y: -2.14, z: 0.82}
   m_LocalScale: {x: 7.9379997, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4511,7 +4511,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -4730,7 +4730,7 @@ GameObject:
   - component: {fileID: 1669816742}
   - component: {fileID: 1669816741}
   m_Layer: 0
-  m_Name: Crowd (4)
+  m_Name: Crowd1Row2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4745,7 +4745,7 @@ Transform:
   m_GameObject: {fileID: 1669816739}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.935, y: -2.14, z: 1.43}
+  m_LocalPosition: {x: -7.935, y: -2.14, z: 0.82}
   m_LocalScale: {x: 7.9379997, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5610,7 +5610,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5961,7 +5961,7 @@ Light:
   m_InnerSpotAngle: 38.64914
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -6236,7 +6236,7 @@ GameObject:
   - component: {fileID: 1980708917}
   - component: {fileID: 1980708916}
   m_Layer: 0
-  m_Name: Crowd
+  m_Name: Crowd2Row2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6329,7 +6329,7 @@ Transform:
   m_GameObject: {fileID: 1980708915}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0148199, y: -2.14, z: 1.43}
+  m_LocalPosition: {x: -1.0148199, y: -2.14, z: 0.82}
   m_LocalScale: {x: 7.9379997, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6422,13 +6422,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032239404}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalRotation: {x: 0.021814892, y: 0, z: 0, w: 0.999762}
   m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.5, y: 0, z: 0}
 --- !u!114 &2032239408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6500,7 +6500,7 @@ GameObject:
   - component: {fileID: 2143985220}
   - component: {fileID: 2143985219}
   m_Layer: 0
-  m_Name: Crowd (3)
+  m_Name: Crowd3Row3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6515,7 +6515,7 @@ Transform:
   m_GameObject: {fileID: 2143985217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.88, y: -2.7236898, z: -1.17}
+  m_LocalPosition: {x: 7.88, y: -2.66, z: -2.23}
   m_LocalScale: {x: 7.9379997, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
