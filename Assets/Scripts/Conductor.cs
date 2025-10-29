@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Conductor : MonoBehaviour
 {
+    //currently, it has some desync issues due to how the note the player is supposed to hit updates
+    
     [Header("References")]
     public ChartHolder chartHolder;
     public AudioSource music; //the music
@@ -65,7 +67,7 @@ public class Conductor : MonoBehaviour
         ms = (noteInMilliseconds - songPosition) * 1000;
         print("ms: " + (ms));
 
-        //if the current note has been up for 200 ms, update for the next note
+        //if the current note has been up for a certain amount of ms, update for the next note
         if (ms < -700)
         {
             noteInMilliseconds = ((currentMeasure - 1) * 4 + currentBeat) * secPerBeat;
