@@ -5,13 +5,16 @@ public class MusicScript : MonoBehaviour
 {
 
     bool songFinished = false;
+    bool songStarted = false;
     float songFinishedTimer = 0.0f;
-    float songFinishedTime = 3.0f;
+    float songFinishedTime = 2.0f;
+
+    public AudioSource audioPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartSong();
     }
 
     // Update is called once per frame
@@ -24,10 +27,16 @@ public class MusicScript : MonoBehaviour
             if (songFinishedTimer > songFinishedTime)
                 SceneManager.LoadScene(2);
         }
+
+        if (!audioPlayer.isPlaying && songStarted)
+        {
+            songFinished = true;
+        }
     }
 
-    void changeSongFinished()
+    void StartSong()
     {
-        songFinished = true;
+        songStarted = true;
+        audioPlayer.Play();
     }
 }
